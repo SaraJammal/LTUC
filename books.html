@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/favicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Bostorek</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+     <new-header></new-header>
+    <!-- end header section -->
+  </div>
+
+  <section class="about_section layout_padding">
+    <div class="container ">
+      <div class="row"> 
+        <div class="col-md-6">
+            <div class="heading_container">
+              <h2>
+                Our Books
+              </h2>
+            </div>
+            <table id="bookTable" class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Year of publication</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col">The Hunger Games</th>
+                    <th scope="col">Suzanne Collins</th>
+                    <th scope="col">2001</th>
+                    <th scope="col">
+                        <button type='button' 
+                        onclick='bookDelete(this);' 
+                        class='btn btn-default'> Delete
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="col">Harry Potter</th>
+                    <th scope="col">JK Rowling</th>
+                    <th scope="col">1999</th>
+                    <th scope="col">
+                        <button type='button' 
+                        onclick='bookDelete(this);' 
+                        class='btn btn-default'> Delete
+                        </button>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="col">Jane Eyre</th>
+                    <th scope="col">Charlotte Brontë</th>
+                    <th scope="col">1847</th>
+                    <th scope="col">
+                        <button type='button' 
+                        onclick='bookDelete(this);' 
+                        class='btn btn-default'> Delete
+                        </button>
+                    </th>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="heading_container">
+                <h2>
+                  Add A New Book
+                </h2>
+            </div>
+            <form id="new-book-form">
+                <label for="bookname">Book Name:   </label>
+                <input type="text" name="bookname" id="bookname" class="form-input" autocomplete="off"> <br> 
+                <label for="bookauthor">Book Author:</label>
+                <input type="text" name="bookauthor" id="bookauthor" class="form-input" autocomplete="off"> <br> 
+                <label for="bookyear">Publish year:</label>
+                <input type="year" name="bookyear" id="bookyear" class="form-input" autocomplete="off"> <br>
+            </form>
+            <button type="button" id="addButton" class="btn btn-primary" onclick="addBook();">Add Book</button>     
+        </div>   
+      </div>    
+     </div>
+    </div>
+  </section>
+
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="info_detail">
+            <h4>
+              About Us
+            </h4>
+            <p>
+              Vitae aut explicabo fugit facere alias distinctio, exem commodi mollitia minusem dignissimos atque asperiores incidunt vel voluptate iste
+            </p>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="info_contact">
+            <h4>
+              Newsletter
+            </h4>
+            <form action="#">
+              <input type="text" placeholder="Enter email" />
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  
+  <script src="js/books.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>
